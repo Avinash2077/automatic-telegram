@@ -1,19 +1,27 @@
-package com.array;
+package com.quizapplication;
 
-public class Main{
+import java.util.Scanner;
+
+public class Main {
 
     public static void main(String[] args) {
 	// write your code here
-        int arr[]={20,54,35,89,55};
+        Scanner sc=new Scanner(System.in);
+        System.out.println("enter name");
+        String name=sc.nextLine();
 
-        int i;
+        EnterPlayer obj=new EnterPlayer();
 
-        for(i=0;i<5;i++)
+        obj.setName(name);
+//        Game game=new Game(obj);
+//        game.EnterPlayer();
+        Game game=new Game();
+        game.initGame();
+        game.play(obj);
+        System.out.println(obj.getName());
 
-            if(i%2==0)
-                continue;
-            else
-                System.out.println(arr[i]+"\t");
+
+
 
     }
 }
